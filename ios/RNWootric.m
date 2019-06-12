@@ -66,6 +66,14 @@ RCT_EXPORT_METHOD(setCustomNPSQuestion:(NSString *)question) {
   [Wootric setCustomNPSQuestion:question];
 }
 
+RCT_EXPORT_METHOD(setCustomFinalThankYou:(NSString *)finalThankYou) {
+  [Wootric setCustomFinalThankYou:finalThankYou];
+}
+
+RCT_EXPORT_METHOD(setThankYouLinkWithText:(NSString *)thankYouText URL:(NSString *)URL) {
+  [Wootric setThankYouLinkWithText:thankYouText URL:URL];
+}
+
 RCT_EXPORT_METHOD(showSurvey) {
   [Wootric showSurveyInViewController:[UIApplication sharedApplication].delegate.window.rootViewController];
 }
