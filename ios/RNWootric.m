@@ -62,6 +62,10 @@ RCT_EXPORT_METHOD(forceSurvey:(BOOL)force) {
   [Wootric forceSurvey:force];
 }
 
+RCT_EXPORT_METHOD(setCustomNPSQuestion:(NSString *)question) {
+  [Wootric setCustomNPSQuestion:question];
+}
+
 RCT_EXPORT_METHOD(showSurvey) {
   [Wootric showSurveyInViewController:[UIApplication sharedApplication].delegate.window.rootViewController];
 }
