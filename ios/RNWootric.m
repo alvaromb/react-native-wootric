@@ -71,7 +71,8 @@ RCT_EXPORT_METHOD(setCustomFinalThankYou:(NSString *)finalThankYou) {
 }
 
 RCT_EXPORT_METHOD(setThankYouLinkWithText:(NSString *)thankYouText URL:(NSString *)URL) {
-  [Wootric setThankYouLinkWithText:thankYouText URL:URL];
+  NSURL *url = [NSURL URLWithString:URL];
+  [Wootric setThankYouLinkWithText:thankYouText URL:url];
 }
 
 RCT_EXPORT_METHOD(showSurvey) {
