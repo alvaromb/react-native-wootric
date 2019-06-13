@@ -7,7 +7,10 @@ import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.ReadableMapKeySetIterator;
 import com.facebook.react.bridge.ReadableType;
 import com.wootric.androidsdk.Wootric;
+import com.wootric.androidsdk.WootricCustomMessage;
+import com.wootric.androidsdk.WootricCustomThankYou;
 
+import android.net.Uri;
 import java.util.HashMap;
 
 public class RNWootricModule extends ReactContextBaseJavaModule {
