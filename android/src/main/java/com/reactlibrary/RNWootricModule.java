@@ -14,6 +14,8 @@ public class RNWootricModule extends ReactContextBaseJavaModule {
 
   private final ReactApplicationContext reactContext;
   private Wootric wootric;
+  private WootricCustomMessage customMessage;
+  private WootricCustomThankYou customThankYou;
 
   public RNWootricModule(ReactApplicationContext reactContext) {
     super(reactContext);
@@ -55,6 +57,8 @@ public class RNWootricModule extends ReactContextBaseJavaModule {
   @ReactMethod
   public void configureWithClientID(String clientId, String accountToken) {
     wootric = Wootric.init(getCurrentActivity(), clientId, accountToken);
+    customMessage = new WootricCustomMessage();
+    customThankYou = new WootricCustomThankYou();
   }
 
   @ReactMethod
@@ -116,6 +120,43 @@ public class RNWootricModule extends ReactContextBaseJavaModule {
   public void forceSurvey(boolean force) {
     // Workaround for Android
     this.setSurveyImmediately(force);
+  }
+
+  @ReactMethod
+  public void setFollowupQuestion(String question) {
+    customMessage.setFollowupQuestion(question);
+  }
+
+  @ReactMethod
+  public void setPlaceholderText(String text) {
+    customMessage.setPlaceholderText(text);
+  }
+
+  @ReactMethod
+  public void setCustomMessage() {
+    // Link previously configured custom message
+    wootric.setCustomMessage(customMessage);
+  }
+
+  @ReactMethod
+  public void setText(String text) {
+    customThankYou.setText(text);
+  }
+
+  @ReactMethod
+  public void setLinkText(String text) {
+    customThankYou.setLinkText(text);
+  }
+
+  @ReactMethod
+  public void setLinkUri(String uri) {
+    customThankYou.setLinkUri(Uri.parse(uri));
+  }
+
+  @ReactMethod
+  public void setCustomThankYou() {
+    // Link previously configured custom thank you
+    wootric.setCustomThankYou(customThankYou);
   }
 
   @ReactMethod

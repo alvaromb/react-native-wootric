@@ -9,9 +9,11 @@ android/.gradle/
 android/.signing/
 
 # User-specific configurations
+android/.classpath
 android/.idea/*
-
+android/.project
 android/.projectfilesbackup
+android/.settings/
 
 # OSX
 #
